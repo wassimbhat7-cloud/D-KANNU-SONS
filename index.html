@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D. Kannu & Son's - Agricultural Excellence for Harur's Farmers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a472a;
+            --primary-light: #2d6a3d;
+            --accent: #d4a574;
+            --accent-dark: #8b6f47;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #fafafa;
+            --border-color: #e0e0e0;
+            --success: #10b981;
+            --error: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-img {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            flex: 1;
+            margin-left: 48px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-secondary {
+            padding: 10px 20px;
+            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(26, 71, 42, 0.3);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 71, 42, 0.95) 0%, rgba(45, 106, 61, 0.95) 100%);
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-left h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            font-weight: 700;
+        }
+
+        .hero-left p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            padding: 14px 32px;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-light:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--accent);
+            margin-top: 32px;
+        }
+
+        .trust-badge::before {
+            content: '✓';
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2), rgba(26, 71, 42, 0.2));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 18px;
+            text-align: center;
+        }
+
+        /* MILESTONES SECTION */
+        .milestones {
+            padding: 120px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .section-header h2 {
+            font-size: 44px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .milestone-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .milestone-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .milestone-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .milestone-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* LEGACY SECTION */
+        .legacy {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .legacy-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .legacy-image {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2), rgba(26, 71, 42, 0.2));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-align: center;
+            padding: 32px;
+        }
+
+        .legacy-text h2 {
+            font-size: 40px;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            color: var(--primary);
+        }
+
+        .legacy-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        /* PRODUCTS SECTION */
+        .products {
+            padding: 120px 0;
+            background: var(--bg-light);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .product-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            margin: 0 auto 24px;
+        }
+
+        .product-card h3 {
+            font-size: 26px;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .product-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        /* ADVISORY FORM SECTION */
+        .advisory {
+            padding: 120px 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advisory::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .advisory-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .advisory-left h3 {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .advisory-left h2 {
+            font-size: 44px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .advisory-left p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .advisory-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2), rgba(26, 71, 42, 0.2));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-align: center;
+            padding: 32px;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            padding: 48px;
+        }
+
+        .form-card h3 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .form-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .btn-submit {
+            flex: 1;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(26, 71, 42, 0.3);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-reset {
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-reset:hover {
+            background: var(--bg-light);
+        }
+
+        .form-message {
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            display: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            display: block;
+        }
+
+        /* TRUST SECTION */
+        .trust {
+            padding: 120px 0;
+            background: var(--bg-light);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .trust-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .trust-card h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .trust-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* JOURNEY SECTION */
+        .journey {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .journey-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .journey-step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 24px;
+        }
+
+        .journey-step h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .journey-step p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials {
+            padding: 120px 0;
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 14px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 15px;
+        }
+
+        .author-role {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            padding: 120px 0;
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-items {
+            margin-top: 60px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: var(--bg-light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(26, 71, 42, 0.05);
+        }
+
+        .faq-toggle {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* CTA BANNER */
+        .cta-banner {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: 44px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .cta-banner p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.95);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 16px;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            header .container {
+                padding: 0 24px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero-content,
+            .legacy-content,
+            .advisory-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-left h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .products-grid,
+            .milestones-grid,
+            .trust-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-card {
+                padding: 32px 24px;
+            }
+
+            .legacy-text h2,
+            .advisory-left h2 {
+                font-size: 32px;
+            }
+
+            .cta-banner h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-left h1 {
+                font-size: 28px;
+            }
+
+            .section-header h2 {
+                font-size: 26px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .journey-steps {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .header-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-img">DK</div>
+                    <div class="logo-text">
+                        <h1>D. Kannu & Son's</h1>
+                        <p>Established 1974</p>
+                    </div>
+                </a>
+                <nav>
+                    <a href="#legacy">About</a>
+                    <a href="#products">Seeds</a>
+                    <a href="#products">Fertilizers</a>
+                    <a href="#products">Crop Care</a>
+                    <a href="#testimonials">Reviews</a>
+                    <a href="#faq">FAQs</a>
+                    <a href="#advisory">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn-secondary" onclick="document.getElementById('advisory').scrollIntoView();">
+                        ☎ Contact
+                    </button>
+                    <button class="btn-primary" onclick="document.getElementById('advisory-form').scrollIntoView(); document.getElementById('advisoryForm').focus();">
+                        Request Advisory
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="trust-badge">Trusted by Harur's farmers since 1974</div>
+                    <h1>50+ Years of Trust. Growing With Every Farmer.</h1>
+                    <p>Quality agricultural products. Practical guidance. Better crop decisions. For more than five decades, we have stood alongside farmers in and around Harur, helping them choose the right seeds, fertilizers and crop-care solutions for their fields.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-light" onclick="document.getElementById('advisory').scrollIntoView();">
+                            Explore Products
+                        </button>
+                        <button class="btn-light" style="background: transparent; color: white; border: 2px solid white;" onclick="document.getElementById('advisory-form').scrollIntoView();">
+                            Get Farm Guidance →
+                        </button>
+                    </div>
+                    <div class="trust-badge">Certified quality assured agricultural solutions</div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-image">
+                        Authentic Tamil Nadu farmland landscape in Harur bathed in golden morning sun
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MILESTONES SECTION -->
+    <section class="milestones">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Heritage</span>
+                <h2>50+ Years of Growing Together</h2>
+                <p>For over five decades, our journey has been closely connected with the farming community of Harur. What began as a trusted agricultural store has grown through years of relationships, field experience and the confidence of generations of farmers.</p>
+            </div>
+            <div class="milestones-grid">
+                <div class="milestone-card">
+                    <div class="milestone-icon">📅</div>
+                    <h3>50+ Years</h3>
+                    <p>Serving the farming community continuously since 1974.</p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-icon">🤝</div>
+                    <h3>Generations of Trust</h3>
+                    <p>A legacy built through honest service and deep grower relationships.</p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-icon">🌾</div>
+                    <h3>Complete Agri Solutions</h3>
+                    <p>Seeds, fertilizers & crop-care products sourced from verified makers.</p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-icon">👨‍🌾</div>
+                    <h3>Farmer-Focused Guidance</h3>
+                    <p>Practical field support for better crop management at every phase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGACY SECTION -->
+    <section class="legacy" id="legacy">
+        <div class="container">
+            <div class="legacy-content">
+                <div class="legacy-image">
+                    Farmer in Tamil Nadu inspecting crop leaves with magnifying glass in sunlit field
+                </div>
+                <div class="legacy-text">
+                    <span class="section-label">Our Story</span>
+                    <h2>Growing With Harur's Farming Community for Over Five Decades</h2>
+                    <p>We believe agriculture is not just about selling a product. It is about understanding the crop, the soil, the season and the farmer's needs. For more than 50 years, we have built our business around this belief — providing agricultural products along with practical guidance to help farmers make informed decisions throughout the cultivation journey.</p>
+                    <p>Our commitment remains unchanged: to be a trusted partner in every farmer's success story, providing not just products, but also knowledge and support.</p>
+                    <button class="btn-primary" onclick="document.getElementById('advisory-form').scrollIntoView();">
+                        Learn More About Our Advisory Clinic →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Offer</span>
+                <h2>Complete Agricultural Solutions</h2>
+                <p>Everything a farmer needs for successful cultivation, from seeds to soil care</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">🌱</div>
+                    <h3>Seeds</h3>
+                    <p>Quality seeds for different crops and cultivation requirements.</p>
+                    <div class="tags">
+                        <span class="tag">Hybrid</span>
+                        <span class="tag">Open Pollinated</span>
+                        <span class="tag">Local Varieties</span>
+                    </div>
+                    <button class="btn-primary">Explore Seeds</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🥬</div>
+                    <h3>Fertilizers</h3>
+                    <p>Crop nutrition solutions covering essential nutrients and specialized requirements.</p>
+                    <div class="tags">
+                        <span class="tag">Organic</span>
+                        <span class="tag">NPK Blend</span>
+                        <span class="tag">Micronutrients</span>
+                        <span class="tag">Specialty</span>
+                    </div>
+                    <button class="btn-primary">View Fertilizers</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🛡️</div>
+                    <h3>Crop Care</h3>
+                    <p>Solutions for managing insects, diseases, weeds and other crop-related challenges.</p>
+                    <div class="tags">
+                        <span class="tag">Biopesticides</span>
+                        <span class="tag">Fungicides</span>
+                        <span class="tag">Herbicides</span>
+                        <span class="tag">Growth Promoters</span>
+                        <span class="tag">Insecticides</span>
+                    </div>
+                    <button class="btn-primary">Browse Crop Care</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVISORY CLINIC SECTION -->
+    <section class="advisory" id="advisory">
+        <div class="container">
+            <div class="advisory-content">
+                <div class="advisory-left">
+                    <h3>Planning Your Next Crop?</h3>
+                    <h2>Talk to Us Before You Plant.</h2>
+                    <p>Choosing the right seed, fertilizer or crop-care product can make a significant difference to your cultivation. Tell us about your crop and what you are looking for. Our team can help you identify suitable agricultural products based on your requirements.</p>
+                    <div class="advisory-image">
+                        Close-up of farmer hands cradling rich dark fertile soil with sprouted green seedlings
+                    </div>
+                </div>
+                <div class="advisory-right">
+                    <div class="form-card" id="advisory-form">
+                        <h3>Request Crop Advisory</h3>
+                        <p>Share your field requirements. Our Harur agronomist will assist you promptly.</p>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                        
+                        <form id="advisoryForm" onsubmit="return handleFormSubmit(event)">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div class="form-group">
+                                    <label for="name">Your Name *</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Mobile Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit" id="submitBtn">
+                                    Send Inquiry →
+                                </button>
+                                <button type="reset" class="btn-reset">
+                                    Clear Form
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY TRUST US SECTION -->
+    <section class="trust">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Promise</span>
+                <h2>Why Farmers Trust Us</h2>
+                <p>A commitment to excellence in every interaction with our farming community</p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="milestone-icon">⭐</div>
+                    <h3>50+ Years of Experience</h3>
+                    <p>A legacy built through decades of serving the agricultural community in Tamil Nadu.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="milestone-icon">💡</div>
+                    <h3>Practical Guidance</h3>
+                    <p>We help customers understand their crop requirements before choosing a product.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="milestone-icon">📦</div>
+                    <h3>Wide Product Range</h3>
+                    <p>Seeds, fertilizers and crop-care solutions in one place for streamlined cultivation.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="milestone-icon">🗺️</div>
+                    <h3>Local Understanding</h3>
+                    <p>Deep familiarity with the agricultural needs and micro-climates of farmers in and around Harur.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="milestone-icon">🤲</div>
+                    <h3>Personal Service</h3>
+                    <p>We believe in relationships, not just transactions, standing by the farmer across seasons.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="milestone-icon">🌱</div>
+                    <h3>Farmer First</h3>
+                    <p>Our goal is to help farmers make better-informed cultivation decisions for sustainable yield.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CROP JOURNEY SECTION -->
+    <section class="journey">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Process</span>
+                <h2>Your Crop Journey With Us</h2>
+                <p>From planning to harvest, we're with you at every stage</p>
+            </div>
+            <div class="journey-steps">
+                <div class="journey-step">
+                    <div class="step-number">1</div>
+                    <h4>Plan Your Crop</h4>
+                    <p>Understand soil conditions, climate and market demand for optimal crop selection.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="step-number">2</div>
+                    <h4>Choose Quality Seeds</h4>
+                    <p>Select certified, high-yield seeds matched to your field and cultivation methods.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="step-number">3</div>
+                    <h4>Nurture with Care</h4>
+                    <p>Apply proper nutrition and crop protection solutions at critical growth stages.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="step-number">4</div>
+                    <h4>Harvest Success</h4>
+                    <p>Achieve better yields and sustainable farm profits with informed crop management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Farmer Stories</span>
+                <h2>What Farmers Tell Us</h2>
+                <p>Real experiences from the farming community of Harur</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Good products and helpful guidance. They take the time to understand our crop requirements before suggesting a product."</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Rajesh K.</div>
+                        <div class="author-role">Paddy Farmer, Harur</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"We have been purchasing agricultural products here for years. The service is reliable and the advice is useful whenever we have a crop-related problem."</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Priya Devi</div>
+                        <div class="author-role">Vegetables & Groundnuts, Harur</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"A trusted agricultural shop with good product availability and experienced guidance."</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">Murugesh S.</div>
+                        <div class="author-role">Multi-crop Farmer, Harur</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <span class="section-label">Questions?</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers to common farming questions</p>
+        </div>
+        <div class="faq-items">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What crops do you have seeds for?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We carry seeds for a wide range of crops including cereals (rice, maize), pulses (groundnuts, chickpeas), vegetables (tomato, onion, brinjal), and local varieties preferred by Harur farmers. Our seed selection is updated seasonally based on market demand and local agricultural needs.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How do I choose the right fertilizer for my crop?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The right fertilizer depends on your crop type, soil conditions, and growth stage. Our agronomists can help you select appropriate nutrient solutions after understanding your field requirements. Visit us or fill the advisory form to get personalized recommendations.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What pest management solutions do you recommend?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer both organic and chemical pest management solutions including biopesticides, fungicides, and herbicides. Our team provides guidance on integrated pest management (IPM) approaches tailored to your crop and the current pest pressure.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I get advisory support if I'm a new farmer?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. We welcome new farmers and provide comprehensive guidance from crop planning to harvest. Our advisory clinic specifically helps farmers make informed decisions about products and cultivation practices. First consultation is complimentary.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you have organic/certified seeds and fertilizers?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we stock certified organic seeds and bio-based fertilizers for farmers interested in organic farming. We can guide you through organic certification processes and provide appropriate product recommendations.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What's the best time to visit your store?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We're open year-round during standard business hours. However, the peak seasons are just before monsoon and winter planting periods. Call ahead during these times for faster service. We also offer consultations by appointment.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How can I stay updated on new products and seasonal offers?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Connect with us via WhatsApp or email to receive seasonal product updates and farming tips. We also share advisory content on crop management best practices. Contact us through the form to join our farmer network.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you offer bulk discounts for cooperative societies or farmer groups?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we offer special rates for bulk orders from farmer cooperatives, self-help groups, and agricultural societies. Contact us directly with your group's requirements for customized quotations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to Grow Better Crops?</h2>
+            <p>Connect with our Harur agronomists today. Let's discuss the right products and approach for your next cultivation season.</p>
+            <div class="cta-buttons">
+                <button class="btn-light" onclick="document.getElementById('advisory-form').scrollIntoView();">
+                    Request Crop Advisory
+                </button>
+                <button class="btn-secondary" style="border-color: white; color: white;" onclick="window.open('https://payments.cashfree.com/forms/getaudit', '_blank');">
+                    📞 Contact Us Directly
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>D. Kannu & Son's</h4>
+                    <p>Growing With Farmers for Over 50 Years. Seeds | Fertilizers | Crop Care | Agricultural Guidance.</p>
+                    <p>For more than five decades, we have been part of Harur's farming community, helping farmers find the products and support they need throughout the cultivation journey.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#legacy">Our Legacy & Heritage</a>
+                    <a href="#advisory">Agronomy Advisory Clinic</a>
+                    <a href="#testimonials">Farmer Stories & Reviews</a>
+                    <a href="#faq">Frequently Asked Questions</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <a href="#products">Certified Hybrid Seeds</a>
+                    <a href="#products">Soil Nutrition & Fertilizers</a>
+                    <a href="#products">Crop Protection & Bio-Care</a>
+                    <a href="#advisory">Farmer Helpline & Support</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Locate Our Store</h4>
+                    <p>📍 Harur, Tamil Nadu, India</p>
+                    <p>Your trusted agricultural partner since 1974</p>
+                    <a href="tel:+919876543210">☎ +91-XXXX-XXX-XXX</a>
+                    <a href="https://wa.me/919876543210">💬 WhatsApp Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 D. Kannu & Son's. All rights reserved. | <a href="#" style="color: inherit;">Privacy Policy</a> | <a href="#" style="color: inherit;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // AppScript URL
+        const APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvrGBfcixgy9xSgLAFj9AXNd1Cal0H1Wsi95H-fzfH8cLwnIky84RHHlyqwX-Pj_vL/exec';
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            // Validation
+            if (!name || !email || !phone) {
+                showError(formMessage, 'Please fill in all fields');
+                return false;
+            }
+
+            if (phone.length !== 10 || isNaN(phone)) {
+                showError(formMessage, 'Please enter a valid 10-digit phone number');
+                return false;
+            }
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Build URL with query parameters
+            const params = new URLSearchParams({
+                name: name,
+                email: email,
+                phone: phone
+            });
+
+            const fetchUrl = APP_SCRIPT_URL + '?' + params.toString();
+
+            // CRITICAL FETCH RULE: Use GET with mode: no-cors, do NOT use .then(res => res.json())
+            fetch(fetchUrl, { 
+                method: 'GET', 
+                mode: 'no-cors' 
+            })
+            .then(() => {
+                // Success: opaque response, don't check status
+                showSuccess(formMessage);
+                document.getElementById('advisoryForm').reset();
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Inquiry →';
+            })
+            .catch(() => {
+                // Error handler - though mode: no-cors rarely throws
+                showError(formMessage, 'There was an issue sending your request. Please try again.');
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Inquiry →';
+            });
+
+            return false;
+        }
+
+        function showSuccess(element) {
+            element.textContent = '✓ Your inquiry has been sent successfully! Our team will contact you soon.';
+            element.className = 'form-message success';
+            
+            setTimeout(() => {
+                element.className = 'form-message';
+                element.textContent = '';
+            }, 5000);
+        }
+
+        function showError(element, message) {
+            element.textContent = '✗ ' + message;
+            element.className = 'form-message error';
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Close FAQ on outside click
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.faq-item')) {
+                document.querySelectorAll('.faq-item.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        });
+
+        // Smooth scroll helper
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
